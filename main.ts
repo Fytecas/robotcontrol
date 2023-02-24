@@ -14,9 +14,10 @@ input.onButtonPressed(Button.AB, function () {
     }
     radio.sendValue("tel", tel)
 })
-let tel = 0
 let max = 0
 let _4digit: grove.TM1637 = null
+let tel = 0
+tel = 0
 music.setVolume(16)
 music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
 _4digit = grove.createDisplay(DigitalPin.P1, DigitalPin.P15)
