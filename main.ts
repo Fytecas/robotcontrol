@@ -6,6 +6,15 @@ radio.onReceivedNumber(function (receivedNumber) {
         music.stopMelody(MelodyStopOptions.All)
     }
 })
+input.onButtonPressed(Button.AB, function () {
+    if (tel == 1) {
+        tel = 0
+    } else {
+        tel = 1
+    }
+    radio.sendValue("tel", tel)
+})
+let tel = 0
 let max = 0
 let _4digit: grove.TM1637 = null
 music.setVolume(16)
@@ -20,4 +29,6 @@ basic.forever(function () {
         basic.showNumber(max)
         radio.sendValue("max", max)
     }
+    radio.sendValue("pitch", input.rotation(Rotation.Pitch))
+    radio.sendValue("rouleau", input.rotation(Rotation.Roll))
 })
