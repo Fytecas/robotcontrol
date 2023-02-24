@@ -26,9 +26,6 @@ basic.forever(function () {
         radio.sendValue("vitmax", 255 / 1022 * pins.analogReadPin(AnalogPin.P2))
     } else if (max != 255 / 1022 * pins.analogReadPin(AnalogPin.P2)) {
         max = 255 / 1022 * pins.analogReadPin(AnalogPin.P2)
-        basic.showNumber(max)
         radio.sendValue("max", max)
     }
-    radio.sendValue("pitch", input.rotation(Rotation.Pitch))
-    radio.sendValue("rouleau", input.rotation(Rotation.Roll))
 })
